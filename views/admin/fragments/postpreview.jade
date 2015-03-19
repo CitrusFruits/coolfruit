@@ -1,0 +1,7 @@
+div.postPreview(post-id="#{post._id}" id="post#{post._id}")
+	h2.title #{post.title}
+	ul.actions
+		li.icon.icon-pencil(onclick="pages.browsePosts.editPost(#{post._id})")
+		li.icon.icon-bin2(onclick="pages.browsePosts.removePost(#{post._id})")
+	div.clear
+	div.content !{post.content}

@@ -1,0 +1,74 @@
+doctype html
+html
+	head
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
+		link(type="text/css" rel="stylesheet" href="/static/css/icomoon.css")
+		link(type="text/css" rel="stylesheet" href="/static/css/admin.css")
+		link(type="text/css" rel="stylesheet" href="/static/css/chosen.css")
+		link(type="text/css" rel="stylesheet" href="/static/css/hint.base.min.css")
+		//link(type="text/css" rel="stylesheet" href="/static/css/widearea.min.css")
+		script.
+			var user = !{JSON.stringify(user)};
+			var authors = !{JSON.stringify(authors)};
+			var categories = !{JSON.stringify(categories)};  
+			var posts = !{JSON.stringify(posts)};  
+		script(src="/static/js/jquery-2.1.3.min.js")
+		script(src="/static/js/coolfruit.js")
+		script(src="/static/js/pages.js")
+	body
+		table#frame
+			tr
+				td#navBar
+					ul
+						li(content-id="profile") Profile
+						li(content-id="browse") Browse Posts
+						li(content-id="writepost") Write Post
+						li(content-id="categories") Categories
+						if user.admin
+							li(content-id="manageauthors") Authors
+						a(href="/admin/logout")
+							li Logout
+						li#colorSchemeSwitcher(onclick="fruit.toggleDark()")
+							span.icon.icon-contrast
+				td#tdContent
+					div#contentFrame
+						div#profile.tabContent.dnone
+							include ./author
+						div#browse.tabContent.dnone
+							include ./browseposts
+						div#writepost.tabContent.dnone
+							include ./writepost
+						div#categories.tabContent.dnone
+							include ./categories
+						div#updatepassword.tabContent.dnone
+								include ./updatepassword
+						if user.admin
+							div#manageauthors.tabContent.dnone
+								include ./manageauthors
+							div#newauthor.tabContent.dnone
+								include ./newauthor
+	script(src="/static/js/jstorage.js")
+	script.
+		$(document).ready(function (){
+			if($.jStorage.get('theme')){
+				$('body').addClass($.jStorage.get('theme'));
+			}
+			else{
+				$('body').addClass('dark');
+				$.jStorage.set('theme', 'dark');
+			}
+		});
+		fruit.events.subscribe('myevent', function(e){
+			console.log(e);
+		})
+		function publishIt(){
+			fruit.events.publish('myevent');
+		}
+		fruit.tabs.init()
+
+		var defaultPage = !{JSON.stringify(page)};
+		console.log(defaultPage);
+		if(defaultPage !== 'none')
+			fruit.tabs.showTab(defaultPage);
+		else
+			fruit.tabs.showTab('browse');

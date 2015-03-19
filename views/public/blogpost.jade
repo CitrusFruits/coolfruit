@@ -1,0 +1,11 @@
+html
+	head
+		title #{post.title}
+		style.
+			.small{
+				width: 150px;
+			}
+	body
+		h1 #{post.title}
+		h3 #{post._author.name_display}
+		div !{post.content}

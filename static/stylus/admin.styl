@@ -1,0 +1,499 @@
+navBarWidth = 140px
+
+// Color schemes defined seperately
+cBlack = #1b1b1f
+cBlue = #20457c
+cPurple = #804762
+cOrange = #fb6648
+cCream = #fcfaf7
+
+clearfix()
+	visibility hidden
+	display block
+	font-size 0
+	content " "
+	clear both
+	height 0
+centerColumn()
+	width 90%
+	max-width 800px
+	margin auto
+borderBox()
+	-webkit-box-sizing border-box /* Safari/Chrome, other WebKit */
+	-moz-box-sizing border-box    /* Firefox, other Gecko */
+	box-sizing border-box         /* Opera/IE 8+ */
+.clear
+	clear both
+html, body
+	margin 0
+	padding 0
+
+h2
+	margin 10px 0px 10px 0px
+table
+	border-collapse collapse
+	tr.delete td
+		background lighten(cPurple, 50%)
+	.restore
+		background lighten(cBlue, 50%)
+input
+	font-size 17px
+	&:focus
+		outline none
+		border-color cOrange
+	border none
+	border-bottom 1px solid #999
+	background none
+	padding-left .25em
+
+body
+	margin 0
+	overflow hidden
+	font-family 'Lato', sans
+#frame
+	width 100%
+	height 100vh
+	border-spacing 0
+
+#navBar 
+	padding 0px
+	height 100%
+	background #eee
+	color #222
+	border-right 1px solid black
+	vertical-align top
+	width 126px
+	ul
+		padding 0px
+	li
+		cursor pointer
+		padding 10px
+		list-style-type none
+		&:hover
+			background #aaa
+			color white
+	a
+		text-decoration none
+		color #222
+	ul:after
+		clearfix()
+#tdContent
+	overflow-y auto
+#contentFrame
+	height 100vh
+.dnone
+	display none
+.uiBlock
+	background-color rgba(255, 255, 255, 0.87)
+	position fixed
+	left 0
+	top 0
+	width 100vw
+	height 100vh
+.alert
+	font-size 20px
+	width 400px
+	background-color desaturate(darken(cCream, 2%), 95%)
+	position fixed
+	top 20px
+	left 50%
+	min-height 180px
+	padding 20px
+	transform translateX(-50%)
+	border 1px solid cBlue
+	z-index 99
+	.message
+		width 90%
+		margin auto
+		text-align center
+	.buttons
+		position absolute
+		bottom 0px
+		right 0px
+		padding 20px
+		button
+			margin 5px
+.button
+	display inline-block
+	padding 3px
+	margin 0px 5px
+	padding-top 0
+	min-width 50px
+	background cCream
+	cursor pointer
+	border 1px solid cOrange
+	text-align center
+	font-size 17px
+	&:hover
+		background darken(cCream, 10%)
+	&.solid
+		background cOrange
+		color cCream
+		&:hover
+			background darken(cOrange, 10%)
+button.button, input.button
+	padding 2px 3px 0px 3px
+
+.error
+	background-color lighten(cPurple, 50%)
+	padding 10px
+	margin 5px 0px
+
+
+iconOffset = -28px
+
+#login
+	centerColumn()
+	margin-top 150px
+	.form
+		padding 20px 20px 45px 20px
+		border 1px solid cBlack
+	width 300px
+	table 
+		width 100%
+	td input 
+		width 100%
+	.button
+		float right
+		margin-top 8px
+
+#editProfile
+	centerColumn()
+	text-align center
+	h1
+		text-align center
+	#profilePicPreview
+		margin-right 5px
+		display inline-block
+	#editProfileInputs
+		display inline-block
+		width 390px
+		height 390px
+		text-align left
+		table
+			width 100%
+		borderBox()
+		padding-left 5px
+	.icon
+		float right
+		&:hover
+			cursor pointer
+			color #666
+	input
+		float right
+		text-align right
+	.loginName
+		float right
+		font-weight bold
+	.button
+		float right
+		margin-right 0px
+
+#manageAuthorsPage
+	centerColumn()
+	table, .actions
+		width 100%
+		max-width 600px
+	th
+		border-bottom 1px solid black
+	tr
+		border-bottom none
+	.actions
+		.icon
+			margin 0px 0px 0px 20px
+			font-size 16px
+	td, th
+		border-left 1px solid #999
+		border-right 1px solid #999
+		padding 5px 3px
+		text-align right
+		&:first-child
+			text-align left
+			border-left none
+		&:last-child
+			border-right none
+	.icon
+		float right
+		&:hover
+			cursor pointer
+			color #666
+
+#browsePage
+	centerColumn()
+	#browseTitle
+		text-align center
+	.newPost
+		position relative
+		.icon
+			position absolute
+			right iconOffset
+			top -53px
+	.icon
+		font-size 20px
+		margin 10px 0px
+		cursor pointer
+		&:hover
+			color #666
+
+#previews
+	.postPreview
+		min-height 150px
+		position relative
+		margin-bottom 50px
+		&:last-child
+			margin-bottom 100px
+		li
+			list-style-type none
+		h2
+			font-size 30px
+			font-weight 400
+	.content
+		max-height 300px
+		padding: 10px
+		overflow hidden
+		border 1px solid black
+	.title
+		text-align right
+	.actions
+		position absolute
+		right iconOffset
+		top 23px
+
+#postTitle
+	font 20px 'Lato', sans
+	width 100%
+	//border none
+	//border-bottom 1px solid #ccc
+	text-align left
+	margin 10px 0px 0px
+
+#categoriesPage
+	centerColumn()
+	max-width 500px
+	.actions
+		height 30px
+		.icon
+			margin 0px 0px 0px 20px
+		margin-right 10px
+	h2
+		max-width 500px
+		margin-left auto
+		margin-right auto
+	table
+		width 100%
+		margin auto
+		margin-bottom 30px
+	td  
+		height 30px
+		input
+			padding-top 2px
+			height 23px
+			width 100%
+	.icon
+		float right
+		cursor pointer
+		margin-right 10px
+		&:hover
+			color #666
+
+#writePostPage
+	#editor
+		height 100vh
+	#editPost
+		width 50%
+		vertical-align top
+		position relative
+		.hint
+			display inline
+		.icon
+			padding 4px 6px
+			margin 0px 3px
+			position relative
+			top 7px
+			&:hover
+				cursor pointer
+	#previewPost
+		width 50%
+		vertical-align top
+	#postAuthor
+		width 150px
+		position relative
+		bottom -8px
+		font 15px 'Lato', sans
+	#postCategories
+		position relative
+		top 4px
+	#postContent
+		font 16px 'Lato', sans
+		position absolute
+		bottom 0px
+		top 50px
+		width 100%
+		borderBox()
+		padding 0px 5px 2px
+		textarea
+			background rgba(0, 0, 0, 0)
+			resize none
+			borderBox()
+			width 100%
+			height 100%
+			padding 10px
+			font-family monospace
+			letter-spacing -.2px
+			&:focus
+				outline none
+	#savedAlert
+		position absolute
+		width 100%
+		background lighten(cBlue, 30%)
+		bottom -1px
+		left -1px
+		text-align center
+		font-size 20px
+		padding 10px 2px
+		z-index 30
+	#cheatSheet
+		position absolute
+		background transparentify(cCream, cCream, 0.5)
+		z-index 40
+		width 100%
+		height 100%
+		top 0
+		left 0
+		.cheatContent
+			width 95%
+			max-width 700px
+			margin auto
+			background cCream
+			border 1px solid cPurple
+			margin-top 100px
+			padding 30px
+
+
+
+#newAuthorPage
+	centerColumn()
+	max-width 470px
+	table 
+		width 100%
+	input
+		float right
+		text-align right
+		margin-left 10px
+	.button
+		float right
+		margin 10px 0px
+
+#updatePassword
+	centerColumn()
+	width 400px
+	table
+		width 100%
+	input
+		width 100%
+	.button
+		float right
+		margin-top 8px
+
+#colorSchemeSwitcher
+	position fixed
+	bottom 0px
+
+img.small
+	height 100px
+img.medium
+	height 300px
+img.large
+	height 600px
+img.full
+	width 100%
+img.left
+	float left
+	margin 10px
+img.right
+	float right
+	margin 10px
+
+
+//, div, span, li table, td, input, select, option, .chosen-container-multi .chosen-choices, .chosen-container-active .chosen-choices li.search-field input[type="text"]
+body, #navBar, tr
+	transition color 0.25s
+	transition background-color 0.25s
+td
+	transition border-bottom-color 0.25s
+#navBar
+	a
+		transition color 0.25s
+		transition background-color 0.25s
+
+.dark
+	color cCream
+	font-weight 300
+	#postAuthor, #postContent textarea, #postTitle, #navBar
+		color cCream
+		font-weight 301
+	background cBlack
+	#navBar
+		background lighten(cBlack, 5%)
+		border-right 1px solid cBlue
+		a
+			color cCream
+	#postContent textarea
+		border-color lighten(cBlack, 15%)
+	#postAuthor, .chosen-container-multi .chosen-choices, .chosen-container-active .chosen-choices li.search-field input[type="text"]
+		background cBlack
+		color desaturate(darken(cCream, 30%), 100%)
+	.chosen-container .chosen-drop
+		background darken(cBlack, 15%)
+	#editPost .icon
+		&:hover
+			background lighten(cBlack, 25%)
+	#previews
+		.content
+			border-color cPurple
+	#manageAuthorsPage
+		th, td
+			border-color darken(desaturate(cCream, 50%), 14%)
+	input
+		color cCream
+		&:hover, &:focus
+			background #2a2a2a
+	table
+		tr
+			border-bottom 2px solid cBlack
+		.delete
+			background cPurple
+		.restore
+			background cBlue
+	.uiBlock
+		background-color rgba(0, 0, 0, .7)
+	.alert
+		background-color lighten(cBlack, 10%)
+	.button
+		background-color cBlack
+		color cCream
+		&:hover
+			background-color lighten(cBlack, 20%)
+		&.solid
+			background darken(cOrange, 10%)
+			color cCream
+			&:hover
+				background cOrange
+	#writePostPage
+		#cheatSheet
+			background transparentify(cBlack, cBlack, 0.5)
+			.cheatContent
+				border-color cOrange
+				background cBlack
+.light
+	input
+		&:hover, &:focus
+			background darken(cCream, 3%)
+	table
+		tr
+			border-bottom 2px solid white
+	#navBar
+		border-right 1px solid cBlue
+	#previews
+		.content
+			border-color cPurple

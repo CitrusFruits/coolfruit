@@ -1,0 +1,7 @@
+login details
+
+Deve MongoDB
+---------
+user: app
+password: KQ85J7UQPrgxvmQ
+host: ds052827.mongolab.com:52827/coolfruit-dev

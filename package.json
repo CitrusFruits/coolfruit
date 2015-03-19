@@ -1,0 +1,28 @@
+{
+  "name": "coolfruit",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "cms"
+  ],
+  "dependencies": {
+    "express": "4.11.x",
+    "express-session": "1.10.x",
+    "body-parser": "1.12.x",
+    "mongoose-simpledb": "4.0.x",
+    "jade": "1.9.x",
+    "body-parser": "1.11.x",
+    "markdown": "0.5.x",
+    "passport": "0.2.x",
+    "passport-local": "1.0.x",
+    "bcrypt-nodejs": "0.0.3",
+    "async": "0.9.x"
+  },
+  "author": "Andrew Duensing",
+  "license": "Apache"
+}

@@ -1,0 +1,11 @@
+tr.authorData(author-id="#{author.id}")
+	td 
+		b #{author.name_display} 
+	td #{author.name_login}
+	td
+		if author.admin
+			input.isAdmin(type="checkbox" checked)
+		else
+			input.isAdmin(type="checkbox")
+	td
+		span.icon.icon-cross.deleteAuthor

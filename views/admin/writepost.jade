@@ -1,0 +1,52 @@
+extends ./admin.jade
+block content
+	div#writePostPage
+		table#editor(width="100%")
+			tr
+				td#editPost.full
+					div#savedAlert.dnone Saved
+					table
+						tr
+							td(width="100%")
+								input#postTitle(value="#{post.title}" placeholder="Title")
+							td(width="300px")
+								select#postAuthor
+								// authors added in later
+							td(width="300px")
+								div#postCategories
+								/// chosen select will be inserted here
+							td
+								span.hint.hint--left(data-hint="Publish")
+									span.icon.icon-newspaper(onclick="pages.writePost.publish()")
+								span.hint.hint--left(data-hint="Toggle Preview")
+									span.icon.icon-earth(onclick="pages.writePost.toggleView()")
+								span.hint.hint--left(data-hint="Save")
+									span.icon.icon-floppy-disk(onclick="pages.writePost.save()" )
+					div#postContent
+						textarea#postText #{post.content}
+				td#previewPost.dnone
+			div#cheatSheet.dnone
+				div.cheatContent
+					h1 Cheat Sheet
+					h2 Images
+					div ![Alt text](/path/to/img.jpg "Optional title")
+					h2 Classes
+					div {:  .classname}
+					h3 Available Classes
+					ul
+						li .left
+						li .right
+						li .small
+						li .medium
+						li .large
+block scripts
+	script(src="/static/js/markdown.custom.js")
+	script(src="/static/js/chosen.jquery.min.js")
+	script(src="/static/js/widearea.min.js")
+	script.
+		pages.writePost.ogPost = !{JSON.stringify(post)};
+		pages.writePost.categories = !{JSON.stringify(categories)};
+		pages.writePost.authors = !{JSON.stringify(authors)};
+
+		pages.writePost.newPost = !{JSON.stringify(post)};
+		pages.writePost.init();

@@ -1,0 +1,25 @@
+extends ./admin.jade
+style.
+	table {
+		border-collapse: collapse;
+	}
+	tr.delete{
+		background-color: red;
+	}
+block content
+	div#manageAuthorsPage
+		h1 Manage Authors
+			div.actions
+				span.icon.icon-plus(onclick="pages.newAuthor.show()")
+				span.icon.icon-floppy-disk(onclick="pages.manageAuthors.save()")
+		table#authorsTable
+			tr
+				th Display Name
+				th Login Name
+				th Is Admin
+				th Delete
+			each author in authors
+				include ./fragments/authorRow
+block scripts
+	script.
+		pages.manageAuthors.init();

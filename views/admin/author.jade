@@ -1,0 +1,35 @@
+extends ./admin.jade
+block head
+	title Browse Posts
+block content
+	#editProfile
+		h1 Edit Profile
+		if(user.picture_url)
+			img#profilePicPreview(src="#{user.picture_url}" height="400px")
+		else
+			img#profilePicPreview(src="http://placehold.it/390x390" height="400px")
+		#editProfileInputs
+			table
+				tr
+					td Display Name 
+					td
+						input#nameDisplay(value="#{user.name_display}")
+				tr
+					td Picture URL 
+					td
+						if(user.picture_url)
+							input#pictureUrl(value="#{user.picture_url}")
+						else
+							input#pictureUrl()
+				tr
+					td Login 
+					td
+						span.loginName #{user.name_login}
+				tr
+					td
+					td
+						span.button.solid(onclick="pages.author.save()") save
+						span.button(onclick="pages.author.updatePassword()") update password
+block scripts
+	script.
+		pages.author.init();

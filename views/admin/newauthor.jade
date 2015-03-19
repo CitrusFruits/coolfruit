@@ -1,0 +1,26 @@
+extends ./admin.jade
+block content
+	div#newAuthorPage
+		h1 New Author
+		div.error
+		table#authorsTable
+			tr
+				td Login Name (cannot be changed)
+				td
+					input.nameLogin
+			tr
+				td Display Name
+				td
+					input.nameDisplay
+			tr
+				td New Password
+				td
+					input.newPass(type="password")
+			tr
+				td Confirm Password
+				td
+					input.confirmPass(type="password")
+			br
+		span.button(onclick="pages.newAuthor.save()") Save
+	script.
+		pages.newAuthor.init()

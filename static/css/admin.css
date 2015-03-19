@@ -1,0 +1,613 @@
+.clear {
+  clear: both;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  margin: 10px 0px 10px 0px;
+}
+table {
+  border-collapse: collapse;
+}
+table tr.delete td {
+  background: #c89bb0;
+}
+table .restore {
+  background: #729cdb;
+}
+input {
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid #999;
+  background: none;
+  padding-left: 0.25em;
+}
+input:focus {
+  outline: none;
+  border-color: #fb6648;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Lato', sans;
+}
+#frame {
+  width: 100%;
+  height: 100vh;
+  border-spacing: 0;
+}
+#navBar {
+  padding: 0px;
+  height: 100%;
+  background: #eee;
+  color: #222;
+  border-right: 1px solid #000;
+  vertical-align: top;
+  width: 126px;
+}
+#navBar ul {
+  padding: 0px;
+}
+#navBar li {
+  cursor: pointer;
+  padding: 10px;
+  list-style-type: none;
+}
+#navBar li:hover {
+  background: #aaa;
+  color: #fff;
+}
+#navBar a {
+  text-decoration: none;
+  color: #222;
+}
+#navBar ul:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+#tdContent {
+  overflow-y: auto;
+}
+#contentFrame {
+  height: 100vh;
+}
+.dnone {
+  display: none;
+}
+.uiBlock {
+  background-color: rgba(255,255,255,0.87);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.alert {
+  font-size: 20px;
+  width: 400px;
+  background-color: #f5f5f4;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  min-height: 180px;
+  padding: 20px;
+  transform: translateX(-50%);
+  border: 1px solid #20457c;
+  z-index: 99;
+}
+.alert .message {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.alert .buttons {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 20px;
+}
+.alert .buttons button {
+  margin: 5px;
+}
+.button {
+  display: inline-block;
+  padding: 3px;
+  margin: 0px 5px;
+  padding-top: 0;
+  min-width: 50px;
+  background: #fcfaf7;
+  cursor: pointer;
+  border: 1px solid #fb6648;
+  text-align: center;
+  font-size: 17px;
+}
+.button:hover {
+  background: #eee3d3;
+}
+.button.solid {
+  background: #fb6648;
+  color: #fcfaf7;
+}
+.button.solid:hover {
+  background: #fa4c28;
+}
+button.button,
+input.button {
+  padding: 2px 3px 0px 3px;
+}
+.error {
+  background-color: #c89bb0;
+  padding: 10px;
+  margin: 5px 0px;
+}
+#login {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 150px;
+  width: 300px;
+}
+#login .form {
+  padding: 20px 20px 45px 20px;
+  border: 1px solid #1b1b1f;
+}
+#login table {
+  width: 100%;
+}
+#login td input {
+  width: 100%;
+}
+#login .button {
+  float: right;
+  margin-top: 8px;
+}
+#editProfile {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+#editProfile h1 {
+  text-align: center;
+}
+#editProfile #profilePicPreview {
+  margin-right: 5px;
+  display: inline-block;
+}
+#editProfile #editProfileInputs {
+  display: inline-block;
+  width: 390px;
+  height: 390px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+#editProfile #editProfileInputs table {
+  width: 100%;
+}
+#editProfile .icon {
+  float: right;
+}
+#editProfile .icon:hover {
+  cursor: pointer;
+  color: #666;
+}
+#editProfile input {
+  float: right;
+  text-align: right;
+}
+#editProfile .loginName {
+  float: right;
+  font-weight: bold;
+}
+#editProfile .button {
+  float: right;
+  margin-right: 0px;
+}
+#manageAuthorsPage {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+#manageAuthorsPage table,
+#manageAuthorsPage .actions {
+  width: 100%;
+  max-width: 600px;
+}
+#manageAuthorsPage th {
+  border-bottom: 1px solid #000;
+}
+#manageAuthorsPage tr {
+  border-bottom: none;
+}
+#manageAuthorsPage .actions .icon {
+  margin: 0px 0px 0px 20px;
+  font-size: 16px;
+}
+#manageAuthorsPage td,
+#manageAuthorsPage th {
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  padding: 5px 3px;
+  text-align: right;
+}
+#manageAuthorsPage td:first-child,
+#manageAuthorsPage th:first-child {
+  text-align: left;
+  border-left: none;
+}
+#manageAuthorsPage td:last-child,
+#manageAuthorsPage th:last-child {
+  border-right: none;
+}
+#manageAuthorsPage .icon {
+  float: right;
+}
+#manageAuthorsPage .icon:hover {
+  cursor: pointer;
+  color: #666;
+}
+#browsePage {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+#browsePage #browseTitle {
+  text-align: center;
+}
+#browsePage .newPost {
+  position: relative;
+}
+#browsePage .newPost .icon {
+  position: absolute;
+  right: -28px;
+  top: -53px;
+}
+#browsePage .icon {
+  font-size: 20px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+#browsePage .icon:hover {
+  color: #666;
+}
+#previews .postPreview {
+  min-height: 150px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#previews .postPreview:last-child {
+  margin-bottom: 100px;
+}
+#previews .postPreview li {
+  list-style-type: none;
+}
+#previews .postPreview h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+#previews .content {
+  max-height: 300px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+#previews .title {
+  text-align: right;
+}
+#previews .actions {
+  position: absolute;
+  right: -28px;
+  top: 23px;
+}
+#postTitle {
+  font: 20px 'Lato', sans;
+  width: 100%;
+  text-align: left;
+  margin: 10px 0px 0px;
+}
+#categoriesPage {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  max-width: 500px;
+}
+#categoriesPage .actions {
+  height: 30px;
+  margin-right: 10px;
+}
+#categoriesPage .actions .icon {
+  margin: 0px 0px 0px 20px;
+}
+#categoriesPage h2 {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#categoriesPage table {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+#categoriesPage td {
+  height: 30px;
+}
+#categoriesPage td input {
+  padding-top: 2px;
+  height: 23px;
+  width: 100%;
+}
+#categoriesPage .icon {
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#categoriesPage .icon:hover {
+  color: #666;
+}
+#writePostPage #editor {
+  height: 100vh;
+}
+#writePostPage #editPost {
+  width: 50%;
+  vertical-align: top;
+  position: relative;
+}
+#writePostPage #editPost .hint {
+  display: inline;
+}
+#writePostPage #editPost .icon {
+  padding: 4px 6px;
+  margin: 0px 3px;
+  position: relative;
+  top: 7px;
+}
+#writePostPage #editPost .icon:hover {
+  cursor: pointer;
+}
+#writePostPage #previewPost {
+  width: 50%;
+  vertical-align: top;
+}
+#writePostPage #postAuthor {
+  width: 150px;
+  position: relative;
+  bottom: -8px;
+  font: 15px 'Lato', sans;
+}
+#writePostPage #postCategories {
+  position: relative;
+  top: 4px;
+}
+#writePostPage #postContent {
+  font: 16px 'Lato', sans;
+  position: absolute;
+  bottom: 0px;
+  top: 50px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px 5px 2px;
+}
+#writePostPage #postContent textarea {
+  background: rgba(0,0,0,0);
+  resize: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-family: monospace;
+  letter-spacing: -0.2px;
+}
+#writePostPage #postContent textarea:focus {
+  outline: none;
+}
+#writePostPage #savedAlert {
+  position: absolute;
+  width: 100%;
+  background: #3a75cc;
+  bottom: -1px;
+  left: -1px;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 2px;
+  z-index: 30;
+}
+#writePostPage #cheatSheet {
+  position: absolute;
+  background: rgba(252,250,247,0.5);
+  z-index: 40;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#writePostPage #cheatSheet .cheatContent {
+  width: 95%;
+  max-width: 700px;
+  margin: auto;
+  background: #fcfaf7;
+  border: 1px solid #804762;
+  margin-top: 100px;
+  padding: 30px;
+}
+#newAuthorPage {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  max-width: 470px;
+}
+#newAuthorPage table {
+  width: 100%;
+}
+#newAuthorPage input {
+  float: right;
+  text-align: right;
+  margin-left: 10px;
+}
+#newAuthorPage .button {
+  float: right;
+  margin: 10px 0px;
+}
+#updatePassword {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  width: 400px;
+}
+#updatePassword table {
+  width: 100%;
+}
+#updatePassword input {
+  width: 100%;
+}
+#updatePassword .button {
+  float: right;
+  margin-top: 8px;
+}
+#colorSchemeSwitcher {
+  position: fixed;
+  bottom: 0px;
+}
+img.small {
+  height: 100px;
+}
+img.medium {
+  height: 300px;
+}
+img.large {
+  height: 600px;
+}
+img.full {
+  width: 100%;
+}
+img.left {
+  float: left;
+  margin: 10px;
+}
+img.right {
+  float: right;
+  margin: 10px;
+}
+body,
+#navBar,
+tr {
+  transition: color 0.25s;
+  transition: background-color 0.25s;
+}
+td {
+  transition: border-bottom-color 0.25s;
+}
+#navBar a {
+  transition: color 0.25s;
+  transition: background-color 0.25s;
+}
+.dark {
+  color: #fcfaf7;
+  font-weight: 300;
+  background: #1b1b1f;
+}
+.dark #postAuthor,
+.dark #postContent textarea,
+.dark #postTitle,
+.dark #navBar {
+  color: #fcfaf7;
+  font-weight: 301;
+}
+.dark #navBar {
+  background: #26262b;
+  border-right: 1px solid #20457c;
+}
+.dark #navBar a {
+  color: #fcfaf7;
+}
+.dark #postContent textarea {
+  border-color: #3b3b43;
+}
+.dark #postAuthor,
+.dark .chosen-container-multi .chosen-choices,
+.dark .chosen-container-active .chosen-choices li.search-field input[type="text"] {
+  background: #1b1b1f;
+  color: #afafaf;
+}
+.dark .chosen-container .chosen-drop {
+  background: #17171a;
+}
+.dark #editPost .icon:hover {
+  background: #50505b;
+}
+.dark #previews .content {
+  border-color: #804762;
+}
+.dark #manageAuthorsPage th,
+.dark #manageAuthorsPage td {
+  border-color: #e2dacc;
+}
+.dark input {
+  color: #fcfaf7;
+}
+.dark input:hover,
+.dark input:focus {
+  background: #2a2a2a;
+}
+.dark table tr {
+  border-bottom: 2px solid #1b1b1f;
+}
+.dark table .delete {
+  background: #804762;
+}
+.dark table .restore {
+  background: #20457c;
+}
+.dark .uiBlock {
+  background-color: rgba(0,0,0,0.7);
+}
+.dark .alert {
+  background-color: #303037;
+}
+.dark .button {
+  background-color: #1b1b1f;
+  color: #fcfaf7;
+}
+.dark .button:hover {
+  background-color: #45454f;
+}
+.dark .button.solid {
+  background: #fa4c28;
+  color: #fcfaf7;
+}
+.dark .button.solid:hover {
+  background: #fb6648;
+}
+.dark #writePostPage #cheatSheet {
+  background: rgba(27,27,31,0.5);
+}
+.dark #writePostPage #cheatSheet .cheatContent {
+  border-color: #fb6648;
+  background: #1b1b1f;
+}
+.light input:hover,
+.light input:focus {
+  background: #f8f3ec;
+}
+.light table tr {
+  border-bottom: 2px solid #fff;
+}
+.light #navBar {
+  border-right: 1px solid #20457c;
+}
+.light #previews .content {
+  border-color: #804762;
+}

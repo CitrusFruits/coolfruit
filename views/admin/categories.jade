@@ -1,0 +1,46 @@
+extends ./admin.jade
+style.
+	.delete{
+		background-color: red;
+	}
+	.restore{
+		background-color: green;
+	}
+	.noselect {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.name input:disabled{
+		border: none;
+		background: none;
+	}
+block content
+	div#categoriesPage
+		h2 Categories (Active)
+		div.actions
+			span.icon.icon-plus(onclick="pages.categories.addRow()")
+			span.icon.icon-floppy-disk(onclick="pages.categories.save()")
+		table.active(width="300px")
+			each c in categories
+				if(!c.archived)
+					tr 
+						td.name
+							input(value="#{c.name_display}" doc-id="#{c._id}")
+						td 
+							span.btnDelete.icon.icon-cross
+		h2 Categories (Archived)
+		table.archived(width="300px")
+			each c in categories
+				if(c.archived)
+					tr 
+						td.name
+							input(value="#{c.name_display}" doc-id="#{c._id}")
+						td 
+							span.btnRestore.icon.icon-plus
+block scripts
+	script.
+		pages.categories.init();

@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
+		link(type="text/css" rel="stylesheet" href="/static/css/admin.css")
+	body
+		#login
+			h1 Login!
+			div.form
+				form(action="login" method="post")
+					table
+						tr
+							td
+								label Username
+							td
+								input(type="text" name="username" autofocus)
+						tr
+							td
+								label Password
+							td
+								input(type="password" name="password")
+					input.button(type="submit" value="Login")

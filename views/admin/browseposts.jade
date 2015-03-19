@@ -1,0 +1,12 @@
+extends ./admin.jade
+block content
+	div#browsePage
+		h1#browseTitle Posts
+		div.newPost
+			div.icon.icon-file-empty(onclick="pages.browsePosts.newPost()")
+		div#previews
+			each post in posts
+				include fragments/postpreview
+block scripts
+	script.
+		pages.browsePosts.init();
